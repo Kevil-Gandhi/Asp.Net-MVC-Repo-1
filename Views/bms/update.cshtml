@@ -1,0 +1,30 @@
+﻿@model book;
+
+<body>
+
+	<h1> Insert Book Details </h1>
+
+	<form method="post" asp-action="update">
+
+		<div class="form-group">
+			<label for="id">Book ID</label>
+			<input type="text" class="form-control" id="id" name="id" asp-for="@Model.Id" readonly>
+		</div> <br><br />
+
+		<div class="form-group">
+			<label for="title">Book Title</label>
+			<input type="text" class="form-control" id="title" name="title" placeholder="Enter Book Title">
+		</div> <br><br />
+
+		<div class="form-group">
+			<label for="price">Price</label>
+			<input type="text" class="form-control" id="price" name="price" placeholder="Enter Price">
+		</div> <br><br />
+
+		<div class="form-group">
+			<input type="submit" class="btn btn-info" value="Update" asp-controller="bms" asp-action="update" />
+		</div>
+
+	</form>
+
+</body>

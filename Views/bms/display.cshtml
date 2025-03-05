@@ -1,0 +1,25 @@
+﻿@model List<book>;
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Title </th>
+            <th> Price </th>
+            <th colspan="2"> Action </th>
+        </tr>
+    </thead>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td> @item.Id </td>
+            <td> @item.title </td>
+            <td> @item.price </td>
+
+            <td> <a class="btn btn-danger" asp-controller="bms" asp-action="delete" asp-route-Id="@item.Id"> Delete </a> </td>
+            <td> <a class="btn btn-warning" asp-controller="bms" asp-action="update" asp-route-Id="@item.Id"> Update </a> </td>
+        </tr>
+    }
+</table>
